@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3013181-9360-42CF-96B4-98DD706B76E8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConsoleApp1</RootNamespace>
+    <AssemblyName>ConsoleApp1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppConsola.cs" />
+    <Compile Include="ConsultaGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaGui.Designer.cs">
+      <DependentUpon>ConsultaGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EliminacioConfirmarGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminacioConfirmarGui.Designer.cs">
+      <DependentUpon>EliminacioConfirmarGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarGui.Designer.cs">
+      <DependentUpon>EliminarGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistro.Designer.cs">
+      <DependentUpon>FormRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InicioGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioGui.Designer.cs">
+      <DependentUpon>InicioGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Limpiar.cs" />
+    <Compile Include="ModificarGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarGui.Designer.cs">
+      <DependentUpon>ModificarGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RealizarModificacionGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RealizarModificacionGui.Designer.cs">
+      <DependentUpon>RealizarModificacionGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarPersonaGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarPersonaGui.Designer.cs">
+      <DependentUpon>RegistrarPersonaGui.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
+      <Project>{939ffb10-ce68-41d7-a599-d9b0a2c061df}</Project>
+      <Name>CapaEntidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaNegocio\CapaLogica.csproj">
+      <Project>{9a0cc56d-7ca1-4cbe-9e16-f454cfed401e}</Project>
+      <Name>CapaLogica</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ConsultaGui.resx">
+      <DependentUpon>ConsultaGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminacioConfirmarGui.resx">
+      <DependentUpon>EliminacioConfirmarGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarGui.resx">
+      <DependentUpon>EliminarGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistro.resx">
+      <DependentUpon>FormRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InicioGui.resx">
+      <DependentUpon>InicioGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarGui.resx">
+      <DependentUpon>ModificarGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RealizarModificacionGui.resx">
+      <DependentUpon>RealizarModificacionGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarPersonaGui.resx">
+      <DependentUpon>RegistrarPersonaGui.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pictureBox1.Image.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
