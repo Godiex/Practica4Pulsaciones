@@ -16,32 +16,52 @@ namespace CapaLogica
         {
             try
             {
-                if (personaRepositorio.Buscar(persona.Identificacion) != null)
-                {
-                    return $"los datos de {persona.Nombre } ya se encuentra registrada";
-                }
-                else
-                {
-                    personaRepositorio.Guardar(persona);
-                    return $"los datos de {persona.Nombre } se han guardado con exito";
-                }
+                string mensaje = IntentarGuardar(persona);
+                return mensaje;
             }
             catch (Exception e)
             {
                 return $"Error de datos  " + e.Message;
             }
         }
-        public List<Persona> Consultar()
+        public string IntentarGuardar(Persona persona)
         {
+            string mensaje;
+            RespuestaBusqueda respuestaBusqueda = Buscar(persona.Identificacion);
+            if (respuestaBusqueda.Persona != null)
+            {
+                mensaje =  $"los datos de {persona.Nombre } ya se encuentra registrados";
+            }
+            else
+            {
+                personaRepositorio.Guardar(persona);
+                mensaje= $"los datos de {persona.Nombre } se han guardado con exito";
+            }
+            return mensaje;
+        }
+        public RespuestaConsulta Consultar()
+        {
+            RespuestaConsulta respuestaConsulta = new RespuestaConsulta();
+            respuestaConsulta.Error = false;
             try
             {
-                List<Persona> personas = personaRepositorio.Consultar();
-                return personas;
+                respuestaConsulta.Personas = personaRepositorio.Consultar();
+                if (respuestaConsulta.Personas.Count > 0)
+                {
+                    respuestaConsulta.Mensaje = $"Regitro de personas encontradas con exito ! ";
+                }
+                else
+                {
+                    respuestaConsulta.Mensaje = $"No hay personas registradas  ";
+                }
+                return respuestaConsulta;
             }
             catch (Exception e)
             {
-                Console.WriteLine("error: " + e.Message);
-                return null;
+                respuestaConsulta.Error = true;
+                respuestaConsulta.Personas = null;
+                respuestaConsulta.Mensaje = $"error en el fichero : {e.Message}";
+                return respuestaConsulta;
             }
         }
 
@@ -49,13 +69,13 @@ namespace CapaLogica
         {
             try
             {
-                Persona persona = personaRepositorio.Buscar(identificacion);
-                if (persona != null)
+                RespuestaBusqueda respuestaBusqueda = Buscar(identificacion);
+                if (respuestaBusqueda.Persona != null)
                 {
                     personaRepositorio.Eliminar(identificacion);
-                    return $"La Persona con nombre: {persona.Nombre} e identificacion: {persona.Identificacion}, se elimino con exito";
+                    return $"La Persona con nombre: {respuestaBusqueda.Persona.Nombre} e identificacion: {respuestaBusqueda.Persona.Identificacion}, se elimino con exito";
                 }
-                return $"La persona con identificacion :{identificacion}, no se encuentra registrada ";
+                return respuestaBusqueda.Mensaje;
             }
             catch (Exception e)
             {
@@ -67,14 +87,13 @@ namespace CapaLogica
         {
             try
             {
-
-                Persona personaAuxiliar = personaRepositorio.Buscar(persona.Identificacion);
-                if (persona != null)
+                RespuestaBusqueda respuestaBusqueda = Buscar(persona.Identificacion);
+                if (respuestaBusqueda.Persona != null)
                 {
                     personaRepositorio.Modificar(persona);
                     return $"La Persona con nombre: {persona.Nombre} e identificacion: {persona.Identificacion}, se Actualizo con exito";
                 }
-                return $"La persona con identificacion :{persona.Identificacion}, no se encuentra registrada ";
+                return respuestaBusqueda.Mensaje;
             }
             catch (Exception e)
             {
@@ -82,25 +101,40 @@ namespace CapaLogica
                 return $"Error de datos" + e.Message;
             }
         }
-        public Persona Buscar(string identificacion)
+        public RespuestaBusqueda Buscar(string identificacion)
         {
+            RespuestaBusqueda respuestaBusqueda = new RespuestaBusqueda();
+            respuestaBusqueda.Error = false;
             try
             {
-                Persona persona = personaRepositorio.Buscar(identificacion);
-                if (persona != null)
-                {
-                    return persona;
-
-                }
-                return null;
+                respuestaBusqueda = ObtenerRespuestaBusqueda(identificacion, respuestaBusqueda);
+                return respuestaBusqueda;
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error en el fichero " +e.Message);
-                return null;
+                respuestaBusqueda = ObtenerRespuestaBusqueda(e, respuestaBusqueda);
+                return respuestaBusqueda;
             }
         }
-
-
+        public RespuestaBusqueda ObtenerRespuestaBusqueda(string identificacion , RespuestaBusqueda respuestaBusqueda)
+        {
+            respuestaBusqueda.Persona = personaRepositorio.Buscar(identificacion);
+            if (respuestaBusqueda.Persona != null)
+            {
+                respuestaBusqueda.Mensaje = $"Datos encontrado con exito";
+            }
+            else
+            {
+                respuestaBusqueda.Mensaje = $"La persona con identificacion : {identificacion}, no se encuentra registrada";
+            }
+            return respuestaBusqueda;
+        }
+        public RespuestaBusqueda ObtenerRespuestaBusqueda(Exception e, RespuestaBusqueda respuestaBusqueda)
+        {
+            respuestaBusqueda.Error = true;
+            respuestaBusqueda.Mensaje = $"error en el fichero : {e.Message}";
+            respuestaBusqueda.Persona = null;
+            return respuestaBusqueda;
+        }
     }    
 }

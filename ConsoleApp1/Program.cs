@@ -18,7 +18,7 @@ namespace CapaPrecentacion
             Application.EnableVisualStyles();
 
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormRegistro ());
+            Application.Run(new MenuPrincipalGui ());
         }
         
 

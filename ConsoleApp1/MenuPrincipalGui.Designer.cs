@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp1
 {
-    partial class FormRegistro
+    partial class MenuPrincipalGui
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistro));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipalGui));
             this.panel1 = new System.Windows.Forms.Panel();
             this.LbFecha = new System.Windows.Forms.Label();
             this.LbHora = new System.Windows.Forms.Label();

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 namespace ConsoleApp1
 {
-    public partial class FormRegistro : Form
+    public partial class MenuPrincipalGui : Form
     {
-        public FormRegistro()
+        public MenuPrincipalGui()
         {
             InitializeComponent();
         }
@@ -71,7 +71,7 @@ namespace ConsoleApp1
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            AbrirFormEnElContenedorDeForms(new ConsultaGui());
+            AbrirFormEnElContenedorDeForms(new BuscarGui());
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)

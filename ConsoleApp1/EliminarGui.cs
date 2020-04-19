@@ -78,15 +78,15 @@ namespace ConsoleApp1
         public Persona RealizarBusqueda()
         {
             string cedula = TbCedula.Text;
-            Persona persona = personaServicio.Buscar(cedula);
-            if (persona != null)
+            RespuestaBusqueda respuestaBusqueda = personaServicio.Buscar(cedula);
+            if (respuestaBusqueda.Persona != null)
             {
-                personaServicio.Buscar(cedula);
-                return persona;
+                
+                return respuestaBusqueda.Persona;
             }
             else
             {
-                EscribirMensaje(persona);
+                EscribirMensaje(respuestaBusqueda.Persona);
                 return null;
             }
         }
@@ -94,10 +94,10 @@ namespace ConsoleApp1
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             string cedula = TbCedula.Text;
-            Persona persona = personaServicio.Buscar(cedula);
+            RespuestaBusqueda respuestaBusqueda= personaServicio.Buscar(cedula);
             if (!CedulaEsCampoVacio())
             {
-                AbrirFormularioEliminacionConfirmar(persona);
+                AbrirFormularioEliminacionConfirmar(respuestaBusqueda.Persona);
             }
             else
             {

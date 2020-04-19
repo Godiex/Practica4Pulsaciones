@@ -87,25 +87,25 @@ namespace ConsoleApp1
         public Persona RealizarBusqueda()
         {
             string cedula = TbCedula.Text;
-            Persona persona = personaServicio.Buscar(cedula);
-            if (persona != null)
+            RespuestaBusqueda respuestaBusqueda = personaServicio.Buscar(cedula);
+            if (respuestaBusqueda.Persona != null)
             {
-                personaServicio.Buscar(cedula);
-                return persona;
+                EscribirMensaje(respuestaBusqueda.Persona);
+                return respuestaBusqueda.Persona;
             }
             else
             {
-                EscribirMensaje(persona);
-                return null;
+                EscribirMensaje(respuestaBusqueda.Persona);
+                return respuestaBusqueda.Persona;
             }
         }
         private void BtnModificar_Click(object sender, EventArgs e)
         {
             string cedula = TbCedula.Text;
-            Persona persona = personaServicio.Buscar(cedula);
+            RespuestaBusqueda respuestaBusqueda = personaServicio.Buscar(cedula);
             if (!CedulaEsCampoVacio())
             {
-                AbrirFormularioRealizarModificacion(persona);
+                AbrirFormularioRealizarModificacion(respuestaBusqueda.Persona);
             }
             else
             {

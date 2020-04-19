@@ -12,11 +12,11 @@ using CapaEntidad;
 
 namespace ConsoleApp1
 {
-    public partial class ConsultaGui : Form
+    public partial class BuscarGui : Form
     {
         PersonaServicio personaServicio = new PersonaServicio();
         Limpiar limpiar = new Limpiar();
-        public ConsultaGui()
+        public BuscarGui()
         {
             InitializeComponent();
         }
@@ -33,8 +33,8 @@ namespace ConsoleApp1
             if (!CedulaEsCampoVacio())
             {
                 string cedula = TbCedula.Text;
-                Persona persona = personaServicio.Buscar(cedula);
-                LlenarDatosPersona(persona);
+                RespuestaBusqueda respuestaBusqueda = personaServicio.Buscar(cedula);
+                LlenarDatosPersona(respuestaBusqueda);
             }
             else
             {
@@ -47,18 +47,18 @@ namespace ConsoleApp1
             string Titulo = "Advertencia";
             MessageBox.Show(mensaje, Titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        public void LlenarDatosPersona(Persona persona)
+        public void LlenarDatosPersona(RespuestaBusqueda respuestaBusqueda)
         {
-            if (persona != null)
+            if (respuestaBusqueda.Persona != null)
             {
-                TbNombre.Text = persona.Nombre;
-                TbEdad.Text = persona.Edad.ToString();
-                TbSexo.Text = persona.Sexo;
-                TbPulsaciones.Text = persona.Pulsaciones.ToString();
+                TbNombre.Text = respuestaBusqueda.Persona.Nombre;
+                TbEdad.Text = respuestaBusqueda.Persona.Edad.ToString();
+                TbSexo.Text = respuestaBusqueda.Persona.Sexo;
+                TbPulsaciones.Text = respuestaBusqueda.Persona.Pulsaciones.ToString();
             }
             else
             {
-                string mensaje = "Error : La Cedula no se encuentra registrada";
+                string mensaje = respuestaBusqueda.Mensaje;
                 MostrarMensajeDeAdvertencia(mensaje);
             }
         }

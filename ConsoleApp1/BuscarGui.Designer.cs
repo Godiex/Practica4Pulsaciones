@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp1
 {
-    partial class ConsultaGui
+    partial class BuscarGui
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaGui));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarGui));
             this.LbNumeroDePulsaciones = new System.Windows.Forms.Label();
             this.LbPulsaciones = new System.Windows.Forms.Label();
             this.PbPersonaCansada = new System.Windows.Forms.PictureBox();

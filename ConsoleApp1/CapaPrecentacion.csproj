@@ -46,11 +46,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppConsola.cs" />
-    <Compile Include="ConsultaGui.cs">
+    <Compile Include="BuscarGui.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultaGui.Designer.cs">
-      <DependentUpon>ConsultaGui.cs</DependentUpon>
+    <Compile Include="BuscarGui.Designer.cs">
+      <DependentUpon>BuscarGui.cs</DependentUpon>
     </Compile>
     <Compile Include="EliminacioConfirmarGui.cs">
       <SubType>Form</SubType>
@@ -64,11 +64,11 @@
     <Compile Include="EliminarGui.Designer.cs">
       <DependentUpon>EliminarGui.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRegistro.cs">
+    <Compile Include="MenuPrincipalGui.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRegistro.Designer.cs">
-      <DependentUpon>FormRegistro.cs</DependentUpon>
+    <Compile Include="MenuPrincipalGui.Designer.cs">
+      <DependentUpon>MenuPrincipalGui.cs</DependentUpon>
     </Compile>
     <Compile Include="InicioGui.cs">
       <SubType>Form</SubType>
@@ -117,8 +117,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ConsultaGui.resx">
-      <DependentUpon>ConsultaGui.cs</DependentUpon>
+    <EmbeddedResource Include="BuscarGui.resx">
+      <DependentUpon>BuscarGui.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EliminacioConfirmarGui.resx">
       <DependentUpon>EliminacioConfirmarGui.cs</DependentUpon>
@@ -126,8 +126,8 @@
     <EmbeddedResource Include="EliminarGui.resx">
       <DependentUpon>EliminarGui.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRegistro.resx">
-      <DependentUpon>FormRegistro.cs</DependentUpon>
+    <EmbeddedResource Include="MenuPrincipalGui.resx">
+      <DependentUpon>MenuPrincipalGui.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioGui.resx">
       <DependentUpon>InicioGui.cs</DependentUpon>
