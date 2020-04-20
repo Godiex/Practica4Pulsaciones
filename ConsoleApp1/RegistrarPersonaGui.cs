@@ -15,33 +15,26 @@ namespace ConsoleApp1
     public partial class RegistrarPersonaGui : Form
     {
         private PersonaServicio personaServicio = new PersonaServicio();
-        private Limpiar limpiar = new Limpiar();
+        private OperacionesCampos limpiar = new OperacionesCampos();
+        VentanaEmergente ventanaEmergente = new VentanaEmergente();
         public RegistrarPersonaGui()
         {
             InitializeComponent();
         }
 
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
         private void BtnCalcularPulsacion_Click(object sender, EventArgs e)
         {
             if (!limpiar.EsCampoVacio(this))
             {
                 Persona persona = CrearPersona();
-                this.LbNumeroDePulsaciones.Text = $"# {persona.Pulsaciones.ToString()}";
+                this.LbNumeroDePulsaciones.Text = $"# {persona.Pulsaciones}";
             }
             else
             {
-                string mensaje = "Error : Llene todos los campos";
-                MessageBox.Show(mensaje, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ventanaEmergente.MensajeErrorCampoVacio();
+                string mensaje = "No ha llenado todos los campos ";
+                EscribirMensaje("Red", mensaje);
             }
         }
         public void VaciarCampos()
@@ -58,15 +51,15 @@ namespace ConsoleApp1
             if (!limpiar.EsCampoVacio(this))
             {
                 Persona persona = CrearPersona();
-                personaServicio.Guardar(persona);
-                EscribirMensaje(true);
+                string respuesta =  personaServicio.Guardar(persona);
+                EscribirMensaje("Lime", respuesta);
                 VaciarCampos();
             }
             else
             {
-                string mensaje = "Error : Llene todos los campos";
-                MessageBox.Show(mensaje, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                EscribirMensaje(false);
+                ventanaEmergente.MensajeErrorCampoVacio();
+                string mensaje = "No ha llenado todos los campos ";
+                EscribirMensaje("Red", mensaje);
             }
             
         }
@@ -81,21 +74,17 @@ namespace ConsoleApp1
             return persona;
         }
 
-        public void EscribirMensaje(bool exito)
+        public void EscribirMensaje(string color ,string respuesta)
         {
-            string mensaje;
-            if (exito == true)
+            if (color == "Lime")
             {
-                mensaje = "Datos guardados con exito !!!";
                 LbRespuesta.ForeColor = System.Drawing.Color.Lime;
-                LbRespuesta.Text = mensaje;
+                LbRespuesta.Text = respuesta;
             }
             else
             {
-                mensaje = "Error, llene todos los campos";
-                LbRespuesta.Font = new System.Drawing.Font("Century Gothic", 17.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 LbRespuesta.ForeColor = System.Drawing.Color.Red;
-                LbRespuesta.Text = mensaje;
+                LbRespuesta.Text = respuesta;
             }
         }
     }

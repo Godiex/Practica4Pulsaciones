@@ -39,7 +39,7 @@ namespace ConsoleApp1
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void BarraSuperior_MouseDown(object sender, MouseEventArgs e)

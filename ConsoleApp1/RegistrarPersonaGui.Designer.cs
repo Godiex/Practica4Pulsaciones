@@ -132,7 +132,6 @@
             this.TbEdad.Name = "TbEdad";
             this.TbEdad.Size = new System.Drawing.Size(72, 36);
             this.TbEdad.TabIndex = 6;
-            this.TbEdad.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // LbEdad
             // 
@@ -167,7 +166,6 @@
             this.CbSexo.Name = "CbSexo";
             this.CbSexo.Size = new System.Drawing.Size(72, 42);
             this.CbSexo.TabIndex = 11;
-            this.CbSexo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // PbPersonaCansada
             // 

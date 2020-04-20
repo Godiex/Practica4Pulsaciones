@@ -15,7 +15,7 @@ namespace ConsoleApp1
     public partial class RealizarModificacionGui : Form
     {
         PersonaServicio personaServicio = new PersonaServicio();
-        private Limpiar limpiar = new Limpiar();
+        private OperacionesCampos limpiar = new OperacionesCampos();
         public RealizarModificacionGui()
         {
             InitializeComponent();

@@ -30,7 +30,7 @@ namespace CapaLogica
             RespuestaBusqueda respuestaBusqueda = Buscar(persona.Identificacion);
             if (respuestaBusqueda.Persona != null)
             {
-                mensaje =  $"los datos de {persona.Nombre } ya se encuentra registrados";
+                mensaje =  $"los datos de {persona.Identificacion} ya se encuentra registrados";
             }
             else
             {

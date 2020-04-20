@@ -45,7 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppConsola.cs" />
     <Compile Include="BuscarGui.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +63,8 @@
     <Compile Include="EliminarGui.Designer.cs">
       <DependentUpon>EliminarGui.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mensaje.cs" />
+    <Compile Include="TextoLabel.cs" />
     <Compile Include="MenuPrincipalGui.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,7 +77,7 @@
     <Compile Include="InicioGui.Designer.cs">
       <DependentUpon>InicioGui.cs</DependentUpon>
     </Compile>
-    <Compile Include="Limpiar.cs" />
+    <Compile Include="OperacionesCampos.cs" />
     <Compile Include="ModificarGui.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +103,7 @@
     <Compile Include="RegistrarPersonaGui.Designer.cs">
       <DependentUpon>RegistrarPersonaGui.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanaEmergente.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

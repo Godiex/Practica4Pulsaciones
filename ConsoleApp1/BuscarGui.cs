@@ -15,7 +15,8 @@ namespace ConsoleApp1
     public partial class BuscarGui : Form
     {
         PersonaServicio personaServicio = new PersonaServicio();
-        Limpiar limpiar = new Limpiar();
+        OperacionesCampos operacionesCampos = new OperacionesCampos();
+        VentanaEmergente ventanaEmergente = new VentanaEmergente();
         public BuscarGui()
         {
             InitializeComponent();
@@ -39,14 +40,10 @@ namespace ConsoleApp1
             else
             {
                 string mensaje = "Error : Llene el campo cedula";
-                MostrarMensajeDeAdvertencia(mensaje);
+                ventanaEmergente.MensajeErrorCampoVacio(mensaje);
             }
         }
-        public void MostrarMensajeDeAdvertencia(string mensaje)
-        {
-            string Titulo = "Advertencia";
-            MessageBox.Show(mensaje, Titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+       
         public void LlenarDatosPersona(RespuestaBusqueda respuestaBusqueda)
         {
             if (respuestaBusqueda.Persona != null)
@@ -59,13 +56,13 @@ namespace ConsoleApp1
             else
             {
                 string mensaje = respuestaBusqueda.Mensaje;
-                MostrarMensajeDeAdvertencia(mensaje);
+                ventanaEmergente.MensajeErrorCampoVacio(mensaje);
             }
         }
 
         private void BtnVaciarCampos_Click(object sender, EventArgs e)
         {
-            limpiar.VaciarCampos(this);
+            operacionesCampos.VaciarCampos(this);
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace ConsoleApp1
 {
-    public class Limpiar
+    public class OperacionesCampos
     {
 
         public void VaciarCampos(Control control)

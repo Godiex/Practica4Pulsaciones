@@ -15,8 +15,8 @@ namespace ConsoleApp1
     public partial class ModificarGui : Form
     {
         private PersonaServicio personaServicio = new PersonaServicio();
-        private Limpiar limpiar = new Limpiar();
-
+        private OperacionesCampos operacionesCampos = new OperacionesCampos();
+        VentanaEmergente ventanaEmergente = new VentanaEmergente();
         public ModificarGui()
         {
             InitializeComponent();
@@ -32,19 +32,15 @@ namespace ConsoleApp1
         }
         public void EscribirMensaje(Persona persona )
         {
-            string mensaje;
             if (persona != null)
             {
-                mensaje = "Datos encontrados con exito !!!";
                 LbRespuesta.ForeColor = System.Drawing.Color.Lime;
-                LbRespuesta.Text = mensaje;
+                LbRespuesta.Text = "Datos encontrados con exito !!!";
             }
             else
             {
-                mensaje = "Error, la persona con la cedula digitada no se encuentra registrada";
-                LbRespuesta.Font = new System.Drawing.Font("Century Gothic", 17.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 LbRespuesta.ForeColor = System.Drawing.Color.Red;
-                LbRespuesta.Text = mensaje;
+                LbRespuesta.Text = "Error, la persona con la cedula digitada no se encuentra registrada";
             }
         }
         public void LlenarDatosPersona(Persona persona)
@@ -58,7 +54,7 @@ namespace ConsoleApp1
 
         private void BtnVaciarCampos_Click_1(object sender, EventArgs e)
         {
-            limpiar.VaciarCampos(this);
+            operacionesCampos.VaciarCampos(this);
             this.LbRespuesta.Text = " ";
         }
 
@@ -66,7 +62,6 @@ namespace ConsoleApp1
         {
             if (!CedulaEsCampoVacio())
             {
-                string cedula = TbCedula.Text;
                 Persona persona = RealizarBusqueda();
                 if (persona!=null)
                 {
@@ -75,15 +70,10 @@ namespace ConsoleApp1
             }
             else
             {
-                MostrarMensajeDeCedulaEsCampoVacio();
+                ventanaEmergente.MensajeErrorCampoVacio("Error : Llene el campo cedula");
             }
         }
-        public void MostrarMensajeDeCedulaEsCampoVacio()
-        {
-            string mensaje = "Error : Llene el campo cedula";
-            string Titulo = "Advertencia";
-            MessageBox.Show(mensaje, Titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+
         public Persona RealizarBusqueda()
         {
             string cedula = TbCedula.Text;
@@ -109,7 +99,7 @@ namespace ConsoleApp1
             }
             else
             {
-                MostrarMensajeDeCedulaEsCampoVacio();
+                ventanaEmergente.MensajeErrorCampoVacio("Error : Llene el campo cedula");
             }
             
         }
