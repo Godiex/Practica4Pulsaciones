@@ -26,19 +26,23 @@ namespace ConsoleApp1
             if (CbTipoDeConsulta.Text.Equals("Todos"))
             {
                 DgvPersonas.DataSource = respuestaConsulta.Personas;
+                LbCantidadPersonas.Text = personaServicio.TotalizarPersonas().ToString();
+                LbCantidadDeMujeres.Text = personaServicio.TotalizarPorSexo("F").ToString();
+                LbCantidadDeHombres.Text = personaServicio.TotalizarPorSexo("M").ToString();
             }
             else
             {
                 if (CbTipoDeConsulta.Text.Equals("Hombres"))
                 {
                     DgvPersonas.DataSource = personaServicio.ConsultaPorSexo("M");
+                    LbCantidadDeHombres.Text = personaServicio.TotalizarPorSexo("M").ToString();
                 }
                 else
                 {
                     DgvPersonas.DataSource = personaServicio.ConsultaPorSexo("F");
+                    LbCantidadDeMujeres.Text = personaServicio.TotalizarPorSexo("F").ToString();
                 } 
-            }
-            
+            }  
         }
 
     }

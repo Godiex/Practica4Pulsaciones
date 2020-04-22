@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarGui));
             this.LbTitulo = new System.Windows.Forms.Label();
             this.DgvPersonas = new System.Windows.Forms.DataGridView();
@@ -38,10 +38,10 @@
             this.LbTotalHombres = new System.Windows.Forms.Label();
             this.LbTotalMujeres = new System.Windows.Forms.Label();
             this.LbCantidadPersonas = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LbCantidadDeHombres = new System.Windows.Forms.Label();
             this.LbCantidadDeMujeres = new System.Windows.Forms.Label();
             this.CbTipoDeConsulta = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LbTipoConsulta = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPersonas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -62,14 +62,14 @@
             this.DgvPersonas.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.DgvPersonas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvPersonas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvPersonas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvPersonas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvPersonas.GridColor = System.Drawing.SystemColors.ButtonShadow;
             this.DgvPersonas.Location = new System.Drawing.Point(107, 188);
@@ -80,7 +80,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(595, 118);
+            this.pictureBox3.Location = new System.Drawing.Point(768, 118);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(45, 45);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -96,7 +96,7 @@
             this.BtnConsultar.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConsultar.ForeColor = System.Drawing.Color.Transparent;
             this.BtnConsultar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnConsultar.Location = new System.Drawing.Point(635, 118);
+            this.BtnConsultar.Location = new System.Drawing.Point(808, 118);
             this.BtnConsultar.Name = "BtnConsultar";
             this.BtnConsultar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtnConsultar.Size = new System.Drawing.Size(178, 45);
@@ -119,7 +119,7 @@
             // 
             this.LbTotalHombres.AutoSize = true;
             this.LbTotalHombres.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbTotalHombres.Location = new System.Drawing.Point(677, 520);
+            this.LbTotalHombres.Location = new System.Drawing.Point(662, 520);
             this.LbTotalHombres.Name = "LbTotalHombres";
             this.LbTotalHombres.Size = new System.Drawing.Size(173, 25);
             this.LbTotalHombres.TabIndex = 73;
@@ -144,14 +144,14 @@
             this.LbCantidadPersonas.Size = new System.Drawing.Size(0, 25);
             this.LbCantidadPersonas.TabIndex = 75;
             // 
-            // label1
+            // LbCantidadDeHombres
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(850, 520);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 25);
-            this.label1.TabIndex = 76;
+            this.LbCantidadDeHombres.AutoSize = true;
+            this.LbCantidadDeHombres.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbCantidadDeHombres.Location = new System.Drawing.Point(850, 520);
+            this.LbCantidadDeHombres.Name = "LbCantidadDeHombres";
+            this.LbCantidadDeHombres.Size = new System.Drawing.Size(0, 25);
+            this.LbCantidadDeHombres.TabIndex = 76;
             // 
             // LbCantidadDeMujeres
             // 
@@ -169,20 +169,20 @@
             "Todos",
             "Hombres",
             "Mujeres"});
-            this.CbTipoDeConsulta.Location = new System.Drawing.Point(328, 142);
+            this.CbTipoDeConsulta.Location = new System.Drawing.Point(244, 142);
             this.CbTipoDeConsulta.Name = "CbTipoDeConsulta";
             this.CbTipoDeConsulta.Size = new System.Drawing.Size(150, 21);
             this.CbTipoDeConsulta.TabIndex = 78;
             // 
-            // label2
+            // LbTipoConsulta
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(153, 138);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 25);
-            this.label2.TabIndex = 79;
-            this.label2.Text = "Tipo Consulta :";
+            this.LbTipoConsulta.AutoSize = true;
+            this.LbTipoConsulta.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbTipoConsulta.Location = new System.Drawing.Point(69, 138);
+            this.LbTipoConsulta.Name = "LbTipoConsulta";
+            this.LbTipoConsulta.Size = new System.Drawing.Size(160, 25);
+            this.LbTipoConsulta.TabIndex = 79;
+            this.LbTipoConsulta.Text = "Tipo Consulta :";
             // 
             // ConsultarGui
             // 
@@ -190,10 +190,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1034, 566);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.LbTipoConsulta);
             this.Controls.Add(this.CbTipoDeConsulta);
             this.Controls.Add(this.LbCantidadDeMujeres);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LbCantidadDeHombres);
             this.Controls.Add(this.LbCantidadPersonas);
             this.Controls.Add(this.LbTotalMujeres);
             this.Controls.Add(this.LbTotalHombres);
@@ -222,9 +222,9 @@
         private System.Windows.Forms.Label LbTotalHombres;
         private System.Windows.Forms.Label LbTotalMujeres;
         private System.Windows.Forms.Label LbCantidadPersonas;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LbCantidadDeHombres;
         private System.Windows.Forms.Label LbCantidadDeMujeres;
         private System.Windows.Forms.ComboBox CbTipoDeConsulta;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LbTipoConsulta;
     }
 }
