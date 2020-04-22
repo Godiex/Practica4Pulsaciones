@@ -51,6 +51,12 @@
     <Compile Include="BuscarGui.Designer.cs">
       <DependentUpon>BuscarGui.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultarGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarGui.Designer.cs">
+      <DependentUpon>ConsultarGui.cs</DependentUpon>
+    </Compile>
     <Compile Include="EliminacioConfirmarGui.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,8 +69,6 @@
     <Compile Include="EliminarGui.Designer.cs">
       <DependentUpon>EliminarGui.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mensaje.cs" />
-    <Compile Include="TextoLabel.cs" />
     <Compile Include="MenuPrincipalGui.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +125,9 @@
   <ItemGroup>
     <EmbeddedResource Include="BuscarGui.resx">
       <DependentUpon>BuscarGui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarGui.resx">
+      <DependentUpon>ConsultarGui.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EliminacioConfirmarGui.resx">
       <DependentUpon>EliminacioConfirmarGui.cs</DependentUpon>

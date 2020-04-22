@@ -64,7 +64,20 @@ namespace CapaLogica
                 return respuestaConsulta;
             }
         }
-
+        public int TotalizarPersonas()
+        {
+            int Cantidad = personaRepositorio.TotalizarPersonas();
+            return Cantidad;
+        }
+        public int TotalizarPorSexo(string TipoSexo)
+        {
+            int Cantidad = personaRepositorio.TotalizarPorSexo(TipoSexo);
+            return Cantidad;
+        }
+        public IList<Persona> ConsultaPorSexo(string TipoSexo)
+        {
+            return personaRepositorio.ConsultaPorSexo(TipoSexo);
+        }
         public string  Eliminar(string identificacion)
         {
             try

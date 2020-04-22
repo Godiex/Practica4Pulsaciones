@@ -115,5 +115,10 @@ namespace ConsoleApp1
         {
 
         }
+
+        private void BtnConsulta_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnElContenedorDeForms(new ConsultarGui());
+        }
     }
 }

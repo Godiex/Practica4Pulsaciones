@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipalGui));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.BtnConsulta = new System.Windows.Forms.Button();
             this.LbFecha = new System.Windows.Forms.Label();
             this.LbHora = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -52,6 +54,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.FechaYHora = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -69,6 +72,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel1.Controls.Add(this.pictureBox7);
+            this.panel1.Controls.Add(this.BtnConsulta);
             this.panel1.Controls.Add(this.LbFecha);
             this.panel1.Controls.Add(this.LbHora);
             this.panel1.Controls.Add(this.pictureBox5);
@@ -85,6 +90,32 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 611);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(4, 370);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 10;
+            this.pictureBox7.TabStop = false;
+            // 
+            // BtnConsulta
+            // 
+            this.BtnConsulta.FlatAppearance.BorderSize = 0;
+            this.BtnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnConsulta.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnConsulta.ForeColor = System.Drawing.Color.Transparent;
+            this.BtnConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnConsulta.Location = new System.Drawing.Point(49, 370);
+            this.BtnConsulta.Name = "BtnConsulta";
+            this.BtnConsulta.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.BtnConsulta.Size = new System.Drawing.Size(202, 45);
+            this.BtnConsulta.TabIndex = 11;
+            this.BtnConsulta.Text = "Consulta";
+            this.BtnConsulta.UseVisualStyleBackColor = true;
+            this.BtnConsulta.Click += new System.EventHandler(this.BtnConsulta_Click);
             // 
             // LbFecha
             // 
@@ -112,7 +143,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(3, 262);
+            this.pictureBox5.Location = new System.Drawing.Point(3, 238);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(45, 45);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -126,7 +157,7 @@
             this.BtnBuscar.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBuscar.ForeColor = System.Drawing.Color.Transparent;
             this.BtnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnBuscar.Location = new System.Drawing.Point(49, 262);
+            this.BtnBuscar.Location = new System.Drawing.Point(49, 238);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtnBuscar.Size = new System.Drawing.Size(201, 45);
@@ -138,7 +169,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(4, 345);
+            this.pictureBox4.Location = new System.Drawing.Point(3, 319);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(45, 45);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -152,7 +183,7 @@
             this.BtnBorrar.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBorrar.ForeColor = System.Drawing.Color.Transparent;
             this.BtnBorrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnBorrar.Location = new System.Drawing.Point(49, 345);
+            this.BtnBorrar.Location = new System.Drawing.Point(48, 319);
             this.BtnBorrar.Name = "BtnBorrar";
             this.BtnBorrar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtnBorrar.Size = new System.Drawing.Size(202, 45);
@@ -164,7 +195,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(4, 303);
+            this.pictureBox3.Location = new System.Drawing.Point(4, 279);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(45, 45);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -178,7 +209,7 @@
             this.BtnModificar.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnModificar.ForeColor = System.Drawing.Color.Transparent;
             this.BtnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnModificar.Location = new System.Drawing.Point(49, 303);
+            this.BtnModificar.Location = new System.Drawing.Point(49, 279);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtnModificar.Size = new System.Drawing.Size(202, 45);
@@ -190,7 +221,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 220);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 196);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(45, 45);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -204,7 +235,7 @@
             this.BntRegistrar.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BntRegistrar.ForeColor = System.Drawing.Color.Transparent;
             this.BntRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BntRegistrar.Location = new System.Drawing.Point(49, 220);
+            this.BntRegistrar.Location = new System.Drawing.Point(49, 196);
             this.BntRegistrar.Name = "BntRegistrar";
             this.BntRegistrar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BntRegistrar.Size = new System.Drawing.Size(201, 45);
@@ -320,7 +351,7 @@
             this.FechaYHora.Enabled = true;
             this.FechaYHora.Tick += new System.EventHandler(this.FechaYHora_Tick);
             // 
-            // FormRegistro
+            // MenuPrincipalGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -330,10 +361,11 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormRegistro";
+            this.Name = "MenuPrincipalGui";
             this.Text = "Registro De Personas";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -373,5 +405,7 @@
         private System.Windows.Forms.Label LbHora;
         private System.Windows.Forms.Label LbFecha;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Button BtnConsulta;
     }
 }

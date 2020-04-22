@@ -15,6 +15,6 @@ namespace CapaLogica
     }
     public class RespuestaConsulta : Respuesta
     {
-        public List<Persona> Personas { get; set; }
+        public IList<Persona> Personas { get; set; }
     }
 }

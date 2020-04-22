@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using CapaEntidad;
 using System.IO;
+using System.Linq;
 namespace CapaDato
 {
     public class AlmacenamientoPersona
@@ -9,7 +10,7 @@ namespace CapaDato
         private string ruta = @"Persona.txt";
         private FileStream flujoDelArchivo;
         private StreamWriter escritor;
-        private List<Persona> personas;
+        private IList<Persona> personas;
         public AlmacenamientoPersona()
         {
             personas = new List<Persona>();
@@ -22,7 +23,7 @@ namespace CapaDato
             escritor.Close();
             flujoDelArchivo.Close();
         }
-        public List<Persona> Consultar()
+        public IList<Persona> Consultar()
         {
             personas.Clear();
             flujoDelArchivo = new FileStream(ruta, FileMode.OpenOrCreate);
@@ -37,7 +38,20 @@ namespace CapaDato
             lector.Close();
             return personas;
         }
-
+        public int TotalizarPersonas()
+        {
+            int Cantidad = personas.Count();
+            return Cantidad;
+        }
+        public int TotalizarPorSexo(string TipoSexo)
+        {
+            int Cantidad = personas.Where(persona => persona.Sexo.Equals(TipoSexo)).Count();
+            return Cantidad;
+        }
+        public IList<Persona> ConsultaPorSexo(string TipoSexo)
+        {
+            return personas.Where(persona => persona.Sexo.Equals(TipoSexo)).ToList();
+        }
         public Persona MapearPersona( string linea) 
         {
             Persona persona = new Persona();
